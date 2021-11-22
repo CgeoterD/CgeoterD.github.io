@@ -17,16 +17,26 @@ class EasyMV {
     setModelCameraOrbit(x,y,z) {
         this.model.setAttribute("camera-orbit",`${x}deg ${y}deg ${z}%` )
     }
+    setModelSrc(url) {
+        this.model.src = url
+    }
 }
 
-let _3d = new EasyMV("test-model")
-_3d.model.addEventListener("load", () => {
-    console.log(_3d)
-    console.log(`_3d.setModelColor([0,0,0,1],4)`)
-    console.log(`_3d.setModelCameraOrbit(0,60, 100)`)
+let helmet = new EasyMV("test-model")
+helmet.model.addEventListener("load", () => {
+    console.log(helmet)
+    console.log(`helmet.setModelColor([0,0,0,1],4)`)
+    console.log(`helmet.setModelCameraOrbit(0,60, 100)`)
+    helmetBtnSrc.addEventListener("click", (e) => {
+        helmet.setModelSrc("./assets/models/dji-phantom-4.glb")
+    })
 })
-let _3d_2 = new EasyMV("test-model_2")
-_3d_2.model.addEventListener("load", () => {
-    console.log(_3d)
-    console.log(`_3d_2.setModelTexture("https://thumbs.dreamstime.com/z/white-grey-hexagon-background-texture-d-render-metal-illustration-82112026.jpg",0)`)
+let sneakers = new EasyMV("test-model_2")
+sneakers.model.addEventListener("load", () => {
+    console.log(sneakers)
+    console.log(`sneakers.setModelTexture("https://thumbs.dreamstime.com/z/white-grey-hexagon-background-texture-d-render-metal-illustration-82112026.jpg",0)`)
+
 })
+
+
+let helmetBtnSrc = document.querySelector("#Helmet_src")
