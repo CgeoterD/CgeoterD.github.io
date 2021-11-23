@@ -352,3 +352,19 @@ template {
 button {
     width: 100px;
 }
+model-viewer {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.Hotspot {
+    border-radius: 7px;
+    position: relative;
+    left: 89px;
+}
+.btn {
+    position: relative;
+    left: 100px;
+}

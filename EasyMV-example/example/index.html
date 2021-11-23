@@ -12,53 +12,59 @@
 </head>
 <body>
     <div style="height: 100vh;" class="container d-flex align-items-center justify-content-center">
-        <div class="part d-flex flex-column">
-            <model-viewer
-                    style="width:500px; height: 300px"
-                    ar-modes="webxr scene-viewer quick-look"
-                    camera-orbit="180deg 60deg 100%"
-                    reveal="auto"
-                    camera-controls
-                    autoplay
-                    ar
-                    interaction-prompt="none"
-                    src="./assets/models/RobotExpressive.glb"
-            >
-            </model-viewer>
-        </div>
+<!--        <div class="part d-flex flex-column">-->
+<!--            <model-viewer-->
+<!--                    style="width:500px; height: 300px"-->
+<!--                    ar-modes="webxr scene-viewer quick-look"-->
+<!--                    camera-orbit="180deg 60deg 100%"-->
+<!--                    reveal="auto"-->
+<!--                    camera-controls-->
+<!--                    autoplay-->
+<!--                    ar-->
+<!--                    interaction-prompt="none"-->
+<!--                    src="./assets/models/RobotExpressive.glb"-->
+<!--            >-->
+<!--            </model-viewer>-->
+<!--        </div>-->
         <div class="part d-flex flex-column">
         <model-viewer
-                style="width:500px; height: 300px"
+
                 ar-modes="webxr scene-viewer quick-look"
-                camera-orbit="180deg 60deg 100%"
                 id="test-model"
                 reveal="auto"
                 camera-controls
                 autoplay
                 ar
+                interpolation-decay="120"
                 interaction-prompt="none"
-                poster="./assets/models/poster-helmet.png"
-                src="./assets/models/bicycle-helmet.glb"
+                shadow-intensity="1"
+                camera-target="auto 15m auto"
+                max-camera-orbit="auto 100deg 30%"
+                camera-orbit="320deg 80deg 20%"
+                src="./assets/models/untitled.glb"
         >
+            <button class="Hotspot" slot="hotspot-1" data-position="-1.2293179946929194m 8.509123126690772m 4.918226997574184m" data-normal="-0.6427877282742838m 0m 0.7660443436120298m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Camera</div>
+            </button>
         </model-viewer>
-            <button id="Helmet_src">Change src</button>
+            <div class="btn btn-primary">Change</div>
         </div>
-        <div class="part d-flex flex-column">
-        <model-viewer
-                style="width:500px; height: 300px"
-                ar-modes="webxr scene-viewer quick-look"
-                camera-orbit="180deg 60deg 100%"
-                id="test-model_2"
-                reveal="auto"
-                camera-controls
-                autoplay
-                ar
-                interaction-prompt="none"
-                poster="./assets/models/poster-sneakers.png"
-                src="./assets/models/MaterialsVariantsShoe.glb"
-        >
-        </model-viewer>
-            </div>
+<!--        <div class="part d-flex flex-column">-->
+<!--        <model-viewer-->
+<!--                style="width:500px; height: 300px"-->
+<!--                ar-modes="webxr scene-viewer quick-look"-->
+<!--                camera-orbit="180deg 60deg 100%"-->
+<!--                id="test-model_2"-->
+<!--                reveal="auto"-->
+<!--                camera-controls-->
+<!--                autoplay-->
+<!--                ar-->
+<!--                interaction-prompt="none"-->
+<!--                poster="./assets/models/poster-sneakers.png"-->
+<!--                src="./assets/models/MaterialsVariantsShoe.glb"-->
+<!--        >-->
+<!--        </model-viewer>-->
+<!--            </div>-->
 
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
