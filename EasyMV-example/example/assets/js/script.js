@@ -35,10 +35,10 @@ helmet.model.addEventListener("load", () => {
     console.log(helmet)
     console.log(`helmet.setModelColor([0,0,0,1],4)`)
     console.log(`helmet.setModelCameraOrbit(0,60, 100)`)
-    changeBtn.addEventListener('click', () => {
+    changeBtnTop.addEventListener('click', () => {
         helmet.setCameraTarget("auto 92m auto")
     })
-    changeBtn.addEventListener('dblclick', () => {
+    changeBtnBottom.addEventListener('click', () => {
         helmet.setCameraTarget("auto 15m auto")
     })
 
@@ -49,5 +49,6 @@ helmet.model.addEventListener("load", () => {
 //     console.log(`sneakers.setModelTexture("https://thumbs.dreamstime.com/z/white-grey-hexagon-background-texture-d-render-metal-illustration-82112026.jpg",0)`)
 //
 // })
-let changeBtn = document.querySelector(".btn")
+let changeBtnTop = document.querySelector(".btn-top")
+let changeBtnBottom = document.querySelector(".btn-bottom")
 

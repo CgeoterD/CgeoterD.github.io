@@ -364,7 +364,8 @@ model-viewer {
     position: relative;
     left: 89px;
 }
-.btn {
+.btn-top, .btn-bottom {
     position: relative;
+    margin: 10px;
     left: 100px;
 }
