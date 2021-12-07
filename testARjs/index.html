@@ -12,12 +12,9 @@
 <body>
 <a-scene embedded arjs>
     <a-marker preset="hiro">
-            <a-entity
-                    gltf-model="https://github.com/CgeoterD/CgeoterD.github.io/blob/master/testARjs/1untitled.gltf"
-                    scale="5 5 5"
-                    position="50 150 0"
-            >
-            </a-entity>
+        <a-box position="0 0.5 0" material="color: black; opacity: 0.2">
+            <a-entity position="1 0 0" scale="3 3 3" text="value: GenovaWebArt"></a-entity>
+        </a-box>
     </a-marker>
     <a-entity camera></a-entity>
 </a-scene>
