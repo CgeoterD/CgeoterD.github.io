@@ -166,27 +166,6 @@ animationModel.addEventListener("load", () => {
     })
 })
 
-
-/*  EasyWM - easy tool for use google model-viewer
-(( * numMesh - number of 3d model mesh ))
-
-model - id DOM tag model viewer (<model-viewer> id="model")
-
-setModelColor(arrayRGBColor, numMesh) - function for change mesh color.
-   + arrayRGBColor - need RGB color in array. Last array index - opacity (example: [0,0,0,1])
-
-setModelTexture(textureURL, numMesh) - change texture of mesh.
-   + textureURL - any jpg url (in "")
-
-recommendation:
-1. do all manipulation with a 3d model when it loaded.
-For this use addEventListener("load"...
-(example: let _3d = new EasyMW("test_model")
-           _3d.model.addEventListener("load", () => {
-            ...
-})
-
-*/
 class EasyMW {
     constructor(model) {
         this.model = document.querySelector(`#${model}`)
@@ -202,6 +181,9 @@ class EasyMW {
     }
     setModelTexture(textureURL, numMesh) {
         this.model.model.materials[numMesh].pbrMetallicRoughness.baseColorTexture.texture.source.setURI(textureURL)
+    }
+    setCameraTarget(x,y,z) {
+        this.model.cameraTarget = `${x}m ${y}m ${z}m`
     }
     setModelCameraOrbit(x,y,z) {
         this.model.setAttribute("camera-orbit",`${x}deg ${y}deg ${z}%` )
@@ -221,3 +203,58 @@ let t = new EasyMW("test-model-3")
 t.model.addEventListener("load", () => {
     console.log(t)
 })
+let d = new EasyMW("test-model-4")
+d.model.addEventListener("load", () => {
+    console.log(d)
+})
+
+
+
+
+let hotspotBtn_3 = document.querySelector(".Hotspot_3")
+let hotspotBtn_2 = document.querySelector(".Hotspot_2")
+let hotspotBtn_1 = document.querySelector(".Hotspot_1")
+let hotspotBtn_1_content = document.querySelector(".bridge__content")
+let hotspotBtn_2_content = document.querySelector(".head__content")
+let hotspotBtn_3_content = document.querySelector(".frets__content")
+
+let backBtn = document.querySelector("#back__btn")
+let defaultContent = document.querySelector(".hello__content")
+
+backBtn.addEventListener("click", () => {
+    removeAllContent()
+    d.model.cameraTarget = "auto auto auto"
+    d.setModelCameraOrbit(0,75,105)
+    backBtn.classList.remove("back__btn--active")
+    defaultContent.classList.add("hello__content--active")
+
+})
+
+hotspotBtn_1.addEventListener("click", () => {
+    removeAllContent()
+    d.model.cameraTarget = "auto 3m auto"
+    d.setModelCameraOrbit(-20,65,0)
+    backBtn.classList.add("back__btn--active")
+    hotspotBtn_1_content.classList.add("describe__content-item--active")
+})
+hotspotBtn_2.addEventListener("click", () => {
+    removeAllContent()
+    d.model.cameraTarget = "auto 13m auto"
+    d.setModelCameraOrbit(-20,65,0)
+    backBtn.classList.add("back__btn--active")
+    hotspotBtn_2_content.classList.add("describe__content-item--active")
+})
+hotspotBtn_3.addEventListener("click", () => {
+    removeAllContent()
+    d.model.cameraTarget = "auto 8m auto"
+    d.setModelCameraOrbit(-20,65,0)
+    backBtn.classList.add("back__btn--active")
+    hotspotBtn_3_content.classList.add("describe__content-item--active")
+})
+
+function removeAllContent() {
+    hotspotBtn_1_content.classList.remove("describe__content-item--active")
+    hotspotBtn_2_content.classList.remove("describe__content-item--active")
+    hotspotBtn_3_content.classList.remove("describe__content-item--active")
+    defaultContent.classList.remove("hello__content--active")
+}

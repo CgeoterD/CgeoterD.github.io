@@ -50,6 +50,12 @@
                         role="tab" aria-controls="contact" aria-selected="false">Animation
                 </button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="describe-tab" data-bs-toggle="tab" data-bs-target="#describe__container"
+                        type="button"
+                        role="tab" aria-controls="contact" aria-selected="false">Describe
+                </button>
+            </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div id="variants__container" class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
@@ -124,6 +130,29 @@
                     </model-viewer>
                     <select id="animation__select"></select>
                 </div>
+
+            </div>
+            <div id="describe__container" class="tab-pane fade" role="tabpanel" aria-labelledby="describe-tab">
+                <div class="d-flex  describe__wrapper">
+                    <button id="back__btn">Back</button>
+                    <model-viewer  id="test-model-4"  interaction-prompt="none" src="./assets/img/guitar.glb" ar ar-modes="scene-viewer webxr quick-look"  camera-controls autoplay shadow-intensity="1">
+                        <button class="Hotspot Hotspot_1" slot="hotspot-2" data-position="0.856044208389817m 2.8378169888198297m 2.630858665218231m" data-normal="0.00004121655384856153m 0.000004162275009144271m 0.9999999991419356m" data-visibility-attribute="visible">
+                            <div class="HotspotAnnotation">Bridge</div>
+                        </button><button class="Hotspot Hotspot_2" slot="hotspot-3" data-position="0.6288922406279799m 12.806647055236855m 1.7303095328720937m" data-normal="-0.01812223892569212m -0.16092031178940724m 0.986801012215695m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Machine heads</div>
+                    </button><button class="Hotspot Hotspot_3" slot="hotspot-4" data-position="0.16505545055888193m 9.596945968591413m 2.3223655659194518m" data-normal="0.008155982130710593m 0.1286053810756102m 0.991662309414793m" data-visibility-attribute="visible">
+                        <div class="HotspotAnnotation">Frets</div>
+                    </button>
+                    </model-viewer>
+                    <div class="d-flex flex-column text-center describe__content">
+                        <h4>Guitar</h4>
+                        <div class=" hello__content hello__content--active d-flex flex-column">Preview text</div>
+                        <div class="describe__content-item bridge__content d-flex flex-column"><h5>Bridge</h5><p>About guitar bridge...</p></div>
+                        <div class="describe__content-item frets__content d-flex flex-column"><h5>Frets</h5><p>About guitar frets...</p></div>
+                        <div class="describe__content-item head__content d-flex flex-column"><h5>Machine heads</h5><p>About guitar machine heads...</p></div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
